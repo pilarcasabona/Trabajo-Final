@@ -1,14 +1,21 @@
-Version: 1.0
-ProjectId: 939ceccd-b138-42ea-b0d4-b2f7e74a53f1
+install.packages("readr")  # solo la primera vez
+library(readr)
 
-RestoreWorkspace: Default
-SaveWorkspace: Default
-AlwaysSaveHistory: Default
 
-EnableCodeIndexing: Yes
-UseSpacesForTab: Yes
-NumSpacesForTab: 2
-Encoding: UTF-8
+datos <- read_csv("C:/Users/MI PC/OneDrive/Desktop/COVID19.csv")
 
-RnwWeave: Sweave
-LaTeX: pdfLaTeX
+head(datos)
+install.packages("dplyr")
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(readr)
+
+head(datos) 
+colnames(datos)
+glimpse(datos)
+
+datos_esp <- datos %>%
+  filter(country_code == "ES" & !is.na(country_code))
+
+library(stringr)
